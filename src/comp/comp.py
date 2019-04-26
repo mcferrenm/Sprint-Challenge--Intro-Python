@@ -9,8 +9,7 @@ class Human:
         self.age = age
 
     def __repr__(self):
-        # return f"<Human: {self.name}, {self.age}>"
-        return "<Human: %s, %d>" % (self.name, self.age)
+        return f"<Human: {self.name}, {self.age}>"
 
 
 humans = [
@@ -29,19 +28,19 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = [i for i in humans if i.name.startswith('D')]
+a = [i.name for i in humans if i.name.startswith('D')]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = [i for i in humans if i.name.endswith('e')]
+b = [i.name for i in humans if i.name.endswith('e')]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = [i for i in humans if i.name.startswith(('C', 'D', 'E', 'F', 'G'))]
+c = [i.name for i in humans if i.name.startswith(('C', 'D', 'E', 'F', 'G'))]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
@@ -66,7 +65,7 @@ print(f)
 # list, except with all the names capitalized and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names capitalized:")
-g = [(i.name.upper(), i.age + 5) for i in humans]
+g = [Human(i.name.upper(), i.age + 5) for i in humans]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
